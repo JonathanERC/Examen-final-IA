@@ -47,6 +47,7 @@ El algoritmo está programado para que tome una foto cada vez que identifique un
 - [ ] Entrenador de reconocimiento del mismo rostro. (Prioridad Alta)
 - [ ] Entrenador de Emociones. (Prioridad Alta)
 - [ ] Limpiar el código. (Prioridad Media)
+- [ ] Comentar código. (Prioridad Media)
 - [ ] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
 
 ### Bugs
