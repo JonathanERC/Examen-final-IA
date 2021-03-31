@@ -33,11 +33,11 @@ WIP
 
 ------------
 Se puede probar la población de la base de datos de emociones con el siguiente ejecutando el siguiente script:
-`.\capturandoRostros.py`
+`.\capturandoRostros.py`.
 
 Se creará una carpeta en `%USERPROFILE%` llamada `IA`, en esta se almacenarán todos los datos del programa. Dentro de esta carpeta se encontrará una llamada `Data`, en esta se crearán las subcarpetas por cada emoción, donde se guardarán las fotos de las bases de datos de emociones.
 
-debería quedar así: `%USERPROFILE%/IA/Data/{carpetasEmociones}`
+debería quedar así: `%USERPROFILE%/IA/Data/{carpetasEmociones}`.
 
 El algoritmo está programado para que tome una foto cada vez que identifique una cara alimentando la base de datos con un total de 200 fotos por emociones.
 
