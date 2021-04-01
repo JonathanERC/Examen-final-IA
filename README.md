@@ -21,7 +21,7 @@
 ### Requisitos
 * Python3.6 en adelante
 	* Pip
-		* OpenCV (*pip install opencv-python*)
+		* ~~OpenCV (*pip install opencv-python*)~~
 		* OpenCV Contrib (*pip install opencv-contrib-python*)
 		* iMutils (*pip install imutils*)
 		* Numpy (*pip install numpy*)
@@ -43,15 +43,15 @@ El algoritmo está programado para que tome una foto cada vez que identifique un
 
 ------------
 ## Trabajo en proceso
-- [x] ~~Reconocimiento facial. (Prioridad Alta)~~
-- [ ] Entrenador de reconocimiento del mismo rostro. (Prioridad Alta)
-- [ ] Entrenador de Emociones. (Prioridad Alta)
-- [ ] Limpiar el código. (Prioridad Media)
+- [x] Reconocimiento facial. (Prioridad Alta)
+- [x] Entrenador de reconocimiento del mismo rostro. (Prioridad Alta)
+- [x] Entrenador de Emociones. (Prioridad Alta)
+- [x] Limpiar el código. (Prioridad Media)
 - [ ] Comentar código. (Prioridad Media)
 - [ ] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
 
 ### Bugs
-- Por alguna razón el entrenador de reconocimiento del mismo rostro solo funciona con OpenCV 4.2 y no con la versión más reciente. (WIP)
+- ~~Por alguna razón el entrenador de reconocimiento del mismo rostro solo funciona con OpenCV 4.2 y no con la versión más reciente.~~ Corregido, había conflictos entre **"OpenCV"** y **"OpenCV Contrib"**, se ha dejado únicamente a **"OpenCV Contrib"** para el procesamiento basado únicamente en CPU y no en GPU.
 
 ## Créditos
 - Jonathan Rondón por la implementación del código.
