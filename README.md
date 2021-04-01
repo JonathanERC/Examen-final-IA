@@ -48,6 +48,7 @@ El algoritmo está programado para que tome una foto cada vez que identifique un
 - [x] Entrenador de Emociones. (Prioridad Alta)
 - [x] Limpiar el código. (Prioridad Media)
 - [ ] Comentar código. (Prioridad Media)
+- [ ] Agregar variable para poblar la BD a conveniencia. (Prioridad Baja)
 - [ ] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
 
 ### Bugs
