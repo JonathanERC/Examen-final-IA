@@ -1,8 +1,8 @@
 import os
 import subprocess
 
-dataPath = os.path.expanduser('~/IA')
-dataName = os.path.expanduser(dataPath + '/'+'Data')
+rutaDatos = os.path.expanduser('~/IA')
+carpetaDatos = os.path.expanduser(rutaDatos + '/'+'Data')
 
 def entrenarModelo():
     print('Modelo no entrenado')
@@ -14,7 +14,7 @@ def entrenarModelo():
     print('Reconocimiento Facial con Emociones...')
     subprocess.call(['python','reconocimientoEmociones.py'], shell=True)
 
-if not os.path.exists(dataPath and dataPath):
+if not os.path.exists(rutaDatos and carpetaDatos):
     print('Dependencias no encontradas...')
     print('Instalando dependencias...')
     subprocess.call(['pip','install', 'opencv-contrib-python'], shell=True)
@@ -22,7 +22,7 @@ if not os.path.exists(dataPath and dataPath):
     subprocess.call(['pip','install', 'numpy'], shell=True)
     subprocess.call(['pip','install', 'times'], shell=True)
     entrenarModelo()
-elif not os.path.exists(dataName):
+elif not os.path.exists(carpetaDatos):
     entrenarModelo()
 else:
     subprocess.call(['python', 'reconocimientoEmociones.py'], shell=True)

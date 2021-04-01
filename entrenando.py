@@ -3,8 +3,10 @@ import os
 import numpy as np
 import time
 
-dataName = os.path.expanduser('~/IA')
+#Definir carpeta donde se almacenan todos los datos
+carpetaDatos = os.path.expanduser('~/IA')
 
+#Metodo para obtener modelos de reconocimiento facial
 def obtenerModelo(method,facesData,labels):
 	if method == 'EigenFaces': emotion_recognizer = cv2.face.EigenFaceRecognizer_create()
 	if method == 'FisherFaces': emotion_recognizer = cv2.face.FisherFaceRecognizer_create()
@@ -18,29 +20,30 @@ def obtenerModelo(method,facesData,labels):
 	print("Tiempo de entrenamiento ( "+method+" ): ", tiempoEntrenamiento)
 
 	# Almacenando el modelo obtenido
-	emotion_recognizer.write(dataName + '/' + 'modelo'+method+'.xml')
+	emotion_recognizer.write(carpetaDatos + '/' + 'modelo'+method+'.xml')
 
-dataPath = dataName + '/Data'
+#Definir carpeta donde se guardaran las fotos de las emociones
+rutaDatos = carpetaDatos + '/Data'
 
-emotionsList = os.listdir(dataPath)
-print('Lista de emociones: ', emotionsList)
+#Definir lista de emociones a partir de los directorios existentes
+listaEmociones = os.listdir(rutaDatos)
+print('Lista de emociones: ', listaEmociones)
 
 labels = []
 facesData = []
 label = 0
 
-for nameDir in emotionsList:
-	emotionsPath = dataPath + '/' + nameDir
+#Loop para listar directorios de emociones y almacenarlo en la variable labels
+for nameDir in listaEmociones:
+	rutaEmociones = rutaDatos + '/' + nameDir
 
-	for fileName in os.listdir(emotionsPath):
-		#print('Rostros: ', nameDir + '/' + fileName)
+	for fileName in os.listdir(rutaEmociones):
 		labels.append(label)
-		facesData.append(cv2.imread(emotionsPath+'/'+fileName,0))
-		#image = cv2.imread(emotionsPath+'/'+fileName,0)
-		#cv2.imshow('image',image)
-		#cv2.waitKey(10)
+		facesData.append(cv2.imread(rutaEmociones+'/'+fileName,0))
+
 	label = label + 1
 
+#Enviar parametros a los modelos de entrenamiento
 obtenerModelo('EigenFaces',facesData,labels)
 obtenerModelo('FisherFaces',facesData,labels)
 obtenerModelo('LBPH',facesData,labels)

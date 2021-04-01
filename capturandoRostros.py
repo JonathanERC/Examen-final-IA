@@ -2,27 +2,36 @@ import cv2
 import os
 import imutils
 
+#Lista de emociones
 emociones = ['Alegre', 'Triste', 'Enfadado', 'Neutro']
 
-for emotionName in emociones:
-	pausa = input('Presiona "Enter" para entrenar la emoción de ' + emotionName)
+#Loop para poblar la base de datos de emociones
+for nombreEmocion in emociones:
+	#Pausa entre cada emocion
+	pausa = input('Presiona "Enter" para entrenar la emoción de ' + nombreEmocion)
 
-	dataName = os.path.expanduser('~/IA')
-	dataPath = dataName + '/Data'
-	emotionsPath = dataPath + '/' + emotionName
+	#Definir carpeta donde se almacenaran todos los datos
+	carpetaDatos = os.path.expanduser('~/IA')
+	#Definir carpeta donde se guardaran las fotos de las emociones
+	rutaDatos = carpetaDatos + '/Data'
+	#Concatenar rutaDatos y carpetaDatos
+	rutaEmociones = rutaDatos + '/' + nombreEmocion
 
-	if not os.path.exists(emotionsPath):
-		print('Carpeta creada: ',emotionsPath)
-		os.makedirs(emotionsPath)
+	#Condicion que valida si la ruta de emociones existe, en caso contrario crearlo
+	if not os.path.exists(rutaEmociones):
+		print('Carpeta creada: ',rutaEmociones)
+		os.makedirs(rutaEmociones)
 
-	cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+	#Usar como input del modelo la capturadora de video
+	camara = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
+	#Usar el entrenador de rostros de OpenCV Haar-cascade
 	faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 	count = 0
 
 	while True:
 
-		ret, frame = cap.read()
+		ret, frame = camara.read()
 		if ret == False: break
 		frame =  imutils.resize(frame, width=640)
 		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -34,7 +43,7 @@ for emotionName in emociones:
 			cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
 			rostro = auxFrame[y:y+h,x:x+w]
 			rostro = cv2.resize(rostro,(150,150),interpolation=cv2.INTER_CUBIC)
-			cv2.imwrite(emotionsPath + '/rostro_{}.jpg'.format(count),rostro)
+			cv2.imwrite(rutaEmociones + '/rostro_{}.jpg'.format(count),rostro)
 			count = count + 1
 		cv2.imshow('frame',frame)
 
@@ -42,5 +51,5 @@ for emotionName in emociones:
 		if k == 27 or count >= 200:
 			break
 
-	cap.release()
+	camara.release()
 	cv2.destroyAllWindows()
