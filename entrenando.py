@@ -3,6 +3,8 @@ import os
 import numpy as np
 import time
 
+dataName = os.path.expanduser('~/IA')
+
 def obtenerModelo(method,facesData,labels):
 	if method == 'EigenFaces': emotion_recognizer = cv2.face.EigenFaceRecognizer_create()
 	if method == 'FisherFaces': emotion_recognizer = cv2.face.FisherFaceRecognizer_create()
@@ -16,16 +18,12 @@ def obtenerModelo(method,facesData,labels):
 	print("Tiempo de entrenamiento ( "+method+" ): ", tiempoEntrenamiento)
 
 	# Almacenando el modelo obtenido
-	emotion_recognizer.write("modelo"+method+".xml")
+	emotion_recognizer.write(dataName + '/' + 'modelo'+method+'.xml')
 
-dataName = os.path.expanduser('~/IA')
-dataPath = dataName + '/Train'
-
-if not os.path.exists(dataPath):
-		os.makedirs(dataPath)
+dataPath = dataName + '/Data'
 
 emotionsList = os.listdir(dataPath)
-print('Lista de personas: ', emotionsList)
+print('Lista de emociones: ', emotionsList)
 
 labels = []
 facesData = []
