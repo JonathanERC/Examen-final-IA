@@ -28,18 +28,11 @@
 		* Time (*pip install times*)
 
 ## Como usar
-WIP
+El sistema esta hecho para ser autosuficiente, por lo que con ejecutar el archivo `.\run.py` es suficiente para instalar, entrenar y poner en marcha el modelo.
 
-
-------------
-Se puede probar la población de la base de datos de emociones con el siguiente ejecutando el siguiente script:
-`.\capturandoRostros.py`.
-
-Se creará una carpeta en `%USERPROFILE%` llamada `IA`, en esta se almacenarán todos los datos del programa. Dentro de esta carpeta se encontrará una llamada `Data`, en esta se crearán las subcarpetas por cada emoción, donde se guardarán las fotos de las bases de datos de emociones.
-
-debería quedar así: `%USERPROFILE%/IA/Data/{carpetasEmociones}`.
-
-El algoritmo está programado para que tome una foto cada vez que identifique una cara alimentando la base de datos con un total de 200 fotos por emociones.
+Al ejecutar el modelo se creará una carpeta en `%USERPROFILE%` llamada `IA`, en esta se almacenarán todos los datos del programa.
+- En la raíz de la carpeta `%USERPROFILE%/IA/` se almacenarán los archivos `XML` de cada modelo de entrenamiento utilizado.
+- Dentro de la carpeta `%USERPROFILE%/IA/Data/` se crearán subcarpetas por cada emoción donde se guardarán las fotos de las bases de datos de emociones. El algoritmo está programado para que tome una foto cada vez que identifique una cara alimentando la base de datos con un total de 200 fotos por emociones.
 
 ------------
 ## Trabajo en proceso
@@ -49,6 +42,7 @@ El algoritmo está programado para que tome una foto cada vez que identifique un
 - [x] Limpiar el código. (Prioridad Media)
 - [ ] Comentar código. (Prioridad Media)
 - [ ] Agregar variable para poblar la BD a conveniencia. (Prioridad Baja)
+- [ ] Agregar opción para reentrenar el modelo. (Prioridad Baja)
 - [ ] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
 
 ### Bugs
