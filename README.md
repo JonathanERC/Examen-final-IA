@@ -54,7 +54,7 @@ Al ejecutar el modelo se creará una carpeta en `%USERPROFILE%` llamada `IA`, en
 - [ ] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
 
 ### Bugs
-- ~~Por alguna razón el entrenador de reconocimiento del mismo rostro solo funciona con OpenCV 4.2 y no con la versión más reciente.~~ Corregido, había conflictos entre **"OpenCV"** y **"OpenCV Contrib"**, se ha dejado únicamente a **"OpenCV Contrib"** para el procesamiento basado únicamente en CPU y no en GPU.
+- ~~Por alguna razón el entrenador de reconocimiento del mismo rostro solo funciona con OpenCV 4.2 y no con la versión más reciente.~~ Corregido, había conflictos entre **"OpenCV"** y **"OpenCV Contrib"**, se ha dejado únicamente a **"OpenCV Contrib"** para el procesamiento basado solo en CPU.
 
 ## Créditos
 - Jonathan Rondón por la implementación del código.
