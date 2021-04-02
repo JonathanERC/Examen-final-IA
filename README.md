@@ -36,11 +36,11 @@ Al ejecutar el modelo se creará una carpeta en `%USERPROFILE%` llamada `IA`, en
 - Dentro de la carpeta `%USERPROFILE%/IA/Data/` se crearán subcarpetas por cada emoción donde se guardarán las fotos de las bases de datos de emociones. El algoritmo está programado para que tome una foto cada vez que identifique una cara alimentando la base de datos con un total de 200 fotos por emociones.
 
 ### Argumentos disponibles
- -r      Reentrenar modelos.
- -p      Indicar cantidad maxima de fotos para entrenamientos.
- -m      Selecionar modelo de reconocimiento.
- -h      Lista de argumentos.
- -t      Reiniciar todo el sistema y parametros.
+     -r      Reentrenar modelos.
+     -p      Indicar cantidad maxima de fotos para entrenamientos.
+     -m      Selecionar modelo de reconocimiento.
+     -h      Lista de argumentos.
+     -t      Reiniciar todo el sistema y parametros.
 
 ------------
 ## Trabajo en proceso
