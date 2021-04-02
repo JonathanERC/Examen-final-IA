@@ -13,7 +13,7 @@ def obtenerModelo(method,facesData,labels):
 	if method == 'LBPH': emotion_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 	#Entrenando el reconocedor de rostros
-	print("Entrenando ( "+method+" )...")
+	print("\nEntrenando ( "+method+" )...")
 	inicio = time.time()
 	emotion_recognizer.train(facesData, np.array(labels))
 	#Tiempo en segundos que se toma cada modelo en entrenarse

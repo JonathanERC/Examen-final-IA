@@ -2,8 +2,14 @@ import cv2
 import os
 import imutils
 
-#Lista de emociones
-emociones = ['Alegre', 'Triste', 'Enfadado', 'Neutro']
+#Crear arreglo de emociones
+emociones = []
+cantEmociones = int(input('\nIngrese la cantidad de emociones a entrenar: '))
+
+#Loop para agregar emociones al arreglo
+for i in range(0, cantEmociones):
+	elementos = input('Ingrese nombre de la emoción: ')
+	emociones.append(elementos) # adding the element
 
 #Definir carpeta donde se almacenaran todos los datos
 carpetaDatos = os.path.expanduser('~/IA')
@@ -13,7 +19,7 @@ txtPic = carpetaDatos+'/'+'cantPic.txt'
 
 cantPic = int(300)
 if not os.path.exists(txtPic):
-	inputCantPic = input('Indique la cantidad de fotos a tomar para poblar la DB: ')
+	inputCantPic = input('\nIndique la cantidad de fotos a tomar para poblar la DB: ')
 	crearCantPic = open(txtPic, 'w')
 	crearCantPic.write(inputCantPic)
 	crearCantPic.close()
@@ -25,7 +31,6 @@ else:
 	cantPic = int(rawCantPic.read())
 
 #Loop para poblar la base de datos de emociones
-print('Presione la tecla "Esc" para cerrar la ventana')
 for nombreEmocion in emociones:
 	#Pausa entre cada emocion
 	pausa = input('Presiona "Enter" para entrenar la emoción de ' + nombreEmocion)

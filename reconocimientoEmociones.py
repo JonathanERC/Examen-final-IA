@@ -10,7 +10,7 @@ txtModelo = carpetaDatos+'/'+'modelo.txt'
 #Menú para seleccionar el modelo de reconocimiento a utilizar
 method = 'EigenFaces'
 if not os.path.exists(txtModelo):
-	print('Seleccione el modelo que desea utilizar:'
+	print('\nSeleccione el modelo que desea utilizar:'
 	'\n1. EigenFaces - Reconocedor facial enfocado en facciones de la cara.'
 	'\n2. FisherFaces - Reconocedor facial enfocado en reconocer diferentes tonalidades.'
 	'\n3. LBPH - Reconocedor facial enfocado en patrones faciales.')
@@ -51,7 +51,7 @@ rutaDatos = carpetaDatos + '/Data'
 
 imagePaths = os.listdir(rutaDatos)
 print('Lista de emociones: ',imagePaths)
-print('Presione la tecla "Esc" para cerrar la ventana')
+print('\nPresione la tecla "Esc" si desea cerrar la ventana.')
 
 #Definir como la camara el driver principal de capturador de video
 camara = cv2.VideoCapture(0,cv2.CAP_DSHOW)

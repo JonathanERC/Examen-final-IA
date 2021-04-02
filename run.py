@@ -11,13 +11,13 @@ txtPic = rutaDatos+'/'+'cantPic.txt'
 
 #Definición del metodo que corre el entrenamiento del modelo
 def entrenarModelo():
-    print('Modelo no entrenado')
+    print('\nModelo no entrenado')
     print('Inicializando entrenamiento...')
     print('Capturando rostros...')
     subprocess.call(['python','capturandoRostros.py'], shell=True)
     print('Entrenando modelos...')
     subprocess.call(['python','entrenando.py'], shell=True)
-    print('Reconocimiento Facial con Emociones...')
+    print('\nReconocimiento Facial con Emociones...')
     subprocess.call(['python','reconocimientoEmociones.py'], shell=True)
 
 #Argumentos validos
@@ -63,6 +63,7 @@ if not os.path.exists(rutaDatos):
     subprocess.call(['pip','install', 'imutils'], shell=True)
     subprocess.call(['pip','install', 'numpy'], shell=True)
     subprocess.call(['pip','install', 'times'], shell=True)
+    os.makedirs(rutaDatos)
     entrenarModelo()
 #Condición que detecta si la carpeta de datos existe para entrenar el modelo
 elif not os.path.exists(carpetaDatos or txtModelo or txtPic):
