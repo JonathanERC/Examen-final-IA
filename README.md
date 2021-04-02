@@ -51,7 +51,7 @@ Al ejecutar el modelo se creará una carpeta en `%USERPROFILE%` llamada `IA`, en
 - [x] Comentar código. (Prioridad Media)
 - [x] Agregar variable para poblar la BD a conveniencia. (Prioridad Baja)
 - [x] Agregar opción para reentrenar el modelo. (Prioridad Baja)
-- [ ] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
+- [x] Agregar Emociones como un objeto para añadir cuantas sean necesarias. (Prioridad Baja)
 
 ### Bugs
 - ~~Por alguna razón el entrenador de reconocimiento del mismo rostro solo funciona con OpenCV 4.2 y no con la versión más reciente.~~ Corregido, había conflictos entre **"OpenCV"** y **"OpenCV Contrib"**, se ha dejado únicamente a **"OpenCV Contrib"** para el procesamiento basado solo en CPU.
