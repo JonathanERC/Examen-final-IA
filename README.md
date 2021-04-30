@@ -57,4 +57,4 @@ Al ejecutar el modelo se creará una carpeta en `%USERPROFILE%` llamada `IA`, en
 - ~~Por alguna razón el entrenador de reconocimiento del mismo rostro solo funciona con OpenCV 4.2 y no con la versión más reciente.~~ Corregido, había conflictos entre **"OpenCV"** y **"OpenCV Contrib"**, se ha dejado únicamente a **"OpenCV Contrib"** para el procesamiento basado solo en CPU.
 
 ## Créditos
-- [Gabriela Solano](https://omes-va.com/ "Gabriela Solano"). Este codigo es un Fork de un proyecto suyo, todos los creditos para ella por proveer la plantilla inicial en la que se basó este proyecto.
+- [Gabriela Solano](https://omes-va.com/ "Gabriela Solano"). Este codigo es un Fork de un proyecto [suyo](https://omes-va.com/reconocimiento-de-emociones-opencv-python/ "suyo"), todos los creditos para ella por proveer la plantilla inicial en la que se basó este proyecto.
